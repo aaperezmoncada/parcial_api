@@ -1,0 +1,1522 @@
+{
+	"info": {
+		"_postman_id": "ca3afd44-ce4f-4719-862e-baf5ce4da4fa",
+		"name": "CiudadSupermercado",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37860373",
+		"_collection_link": "https://misw-apis-uniandes.postman.co/workspace/SuperMercados~ca579b81-2450-460c-b74e-86e974f2a6fb/collection/37860373-ca3afd44-ce4f-4719-862e-baf5ce4da4fa?action=share&source=collection_link&creator=37860373"
+	},
+	"item": [
+		{
+			"name": "Add Ciudad",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"ciudadId\", data.id);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Buenos Aires\",\r\n    \"pais\": \"Argentina\",\r\n    \"habitantes\": 400000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/cities",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Ciudad",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Aceite de Oliva Virgen Extra Oro del Mediterráneo\",\r\n    \"descripcion\": \"El Aceite de Oliva Virgen Extra Oro del Mediterráneo es un aceite de alta calidad, obtenido de las mejores aceitunas de la región mediterránea. Su sabor afrutado y su aroma fresco lo hacen perfecto para aderezar ensaladas, cocinar a la parrilla y añadir un toque especial a tus platos favoritos. Este aceite se extrae en frío para preservar todas sus propiedades nutritivas y su perfil de sabor único.\",\r\n    \"historia\": \"Desde su fundación en 2010, la empresa OlivaRica se ha dedicado a producir aceites de oliva premium con un enfoque en la sostenibilidad y la calidad. Oro del Mediterráneo fue creado para reflejar la riqueza de las tradiciones olivicultoras de la región y ha sido reconocido en diversas competiciones internacionales por su excelencia y sabor.\",\r\n    \"categoria\": \"Aceites y Vinagres\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/ciudad",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ciudad"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"7c04305a-b44c-41f2-9ee9-ec6f839ec5d1\",\n    \"nombre\": \"Buenos Aires\",\n    \"pais\": \"Argentina\",\n    \"habitantes\": 400000\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Supermercado",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"supermercadoId\", data.id);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Supermercado\",\r\n    \"longitud\": \"10\",\r\n    \"latitud\": \"23\",\r\n    \"paginaWeb\": \"www.supermercado.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/supermarkets",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"supermarkets"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Ciudad",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Supermercado\",\r\n    \"longitud\": \"10\",\r\n    \"latitud\": \"23\",\r\n    \"paginaWeb\": \"www.supermercado.com\",\r\n    \"id\": \"b31d3be3-fb65-400e-90f4-589a597285e0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/supermercado",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"supermercado"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"Supermercado\",\n    \"longitud\": \"10\",\n    \"latitud\": \"23\",\n    \"paginaWeb\": \"www.supermercado.com\",\n    \"id\": \"b31d3be3-fb65-400e-90f4-589a597285e0\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Supermercado2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"supermercadoId2\", data.id);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Supermercado2\",\r\n    \"longitud\": \"10\",\r\n    \"latitud\": \"23\",\r\n    \"paginaWeb\": \"www.supermercado2.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/supermarkets",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"supermarkets"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Ciudad",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Supermercado\",\r\n    \"longitud\": \"10\",\r\n    \"latitud\": \"23\",\r\n    \"paginaWeb\": \"www.supermercado.com\",\r\n    \"id\": \"b31d3be3-fb65-400e-90f4-589a597285e0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/supermercado",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"supermercado"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"Supermercado\",\n    \"longitud\": \"10\",\n    \"latitud\": \"23\",\n    \"paginaWeb\": \"www.supermercado.com\",\n    \"id\": \"b31d3be3-fb65-400e-90f4-589a597285e0\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Supermercado3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"supermercadoId3\", data.id);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Supermercado3\",\r\n    \"longitud\": \"10\",\r\n    \"latitud\": \"23\",\r\n    \"paginaWeb\": \"www.supermercado3.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/supermarkets",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"supermarkets"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Ciudad",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Supermercado\",\r\n    \"longitud\": \"10\",\r\n    \"latitud\": \"23\",\r\n    \"paginaWeb\": \"www.supermercado.com\",\r\n    \"id\": \"b31d3be3-fb65-400e-90f4-589a597285e0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/supermercado",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"supermercado"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"Supermercado\",\n    \"longitud\": \"10\",\n    \"latitud\": \"23\",\n    \"paginaWeb\": \"www.supermercado.com\",\n    \"id\": \"b31d3be3-fb65-400e-90f4-589a597285e0\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Supermercado en Ciudad",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets/{{supermercadoId}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"{{ciudadId}}",
+						"supermarkets",
+						"{{supermercadoId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Categoria en Producto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets/{{supermercadoId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"{{ciudadId}}",
+								"supermarkets",
+								"{{supermercadoId}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"c28cba87-afef-488f-b7dc-12c487a55c31\",\r\n    \"nombre\": \"Buenos Aires\",\r\n    \"pais\": \"Argentina\",\r\n    \"habitantes\": 400000,\r\n    \"supermercados\": [\r\n        {\r\n            \"id\": \"62505857-7c33-4d37-907a-c6d8b890b80c\",\r\n            \"nombre\": \"Supermercado\",\r\n            \"longitud\": \"10\",\r\n            \"latitud\": \"23\",\r\n            \"paginaWeb\": \"www.supermercado.com\"\r\n        }\r\n    ]\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Invalid Supermercado en Ciudad",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"El supermercado con este id no fue encontrado\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"{{ciudadId}}",
+						"supermarkets",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Invalid Categoria en Producto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"{{ciudadId}}",
+								"supermarkets",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"La categoria con este Id no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Supermercado en Invalid Ciudad",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"La ciudad con este id no fue encontrada\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/cities/00000000-0000-0000-0000-000000000000/supermarkets/{{supermercadoId}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"00000000-0000-0000-0000-000000000000",
+						"supermarkets",
+						"{{supermercadoId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Supermercado en Invalid Ciudad",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cities/00000000-0000-0000-0000-000000000000/supermarkets/{{supermercadoId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"00000000-0000-0000-0000-000000000000",
+								"supermarkets",
+								"{{supermercadoId}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"La categoria con este Id no fue encontrada\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Supermercado de Ciudad",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets/{{supermercadoId}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"{{ciudadId}}",
+						"supermarkets",
+						"{{supermercadoId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Supermercado de Ciudad",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets/{{supermercadoId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"{{ciudadId}}",
+								"supermarkets",
+								"{{supermercadoId}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"62505857-7c33-4d37-907a-c6d8b890b80c\",\r\n    \"nombre\": \"Supermercado\",\r\n    \"longitud\": \"10\",\r\n    \"latitud\": \"23\",\r\n    \"paginaWeb\": \"www.supermercado.com\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Supermercados de Ciudad",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"{{ciudadId}}",
+						"supermarkets"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Supermercados de Ciudad",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"{{ciudadId}}",
+								"supermarkets"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\r\n    {\r\n        \"id\": \"62505857-7c33-4d37-907a-c6d8b890b80c\",\r\n        \"nombre\": \"Supermercado\",\r\n        \"longitud\": \"10\",\r\n        \"latitud\": \"23\",\r\n        \"paginaWeb\": \"www.supermercado.com\"\r\n    }\r\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Invalid Supermercado de Ciudad",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"El supermercado con este id no fue encontrado\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"{{ciudadId}}",
+						"supermarkets",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Invalid Categoria de Producto",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"{{ciudadId}}",
+								"supermarkets",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"La categoria con este Id no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Supermercado de Invalid Ciudad",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"La ciudad con este id no fue encontrada\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/cities/00000000-0000-0000-0000-000000000000/supermarkets/{{supermercadoId}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"00000000-0000-0000-0000-000000000000",
+						"supermarkets",
+						"{{supermercadoId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Supermercado de Invalid Ciudad",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cities/00000000-0000-0000-0000-000000000000/supermarkets/{{supermercadoId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"00000000-0000-0000-0000-000000000000",
+								"supermarkets",
+								"{{supermercadoId}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"El producto con este Id no fue encontrada\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Supermercado non-associated de Ciudad",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {",
+							"   pm.response.to.have.status(412);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"La ciudad con este id no esta asociada a este Supermercado\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets/{{supermercadoId2}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"{{ciudadId}}",
+						"supermarkets",
+						"{{supermercadoId2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Categoria non-associated de Producto",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets/{{supermercadoId2}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"{{ciudadId}}",
+								"supermarkets",
+								"{{supermercadoId2}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 412,\r\n   \"message\": \"La categoria con este Id no esta asociado a esta producto\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Supermercados de Invalid Ciudad",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"La ciudad con este id no fue encontrada\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/cities/00000000-0000-0000-0000-000000000000/supermarkets",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"00000000-0000-0000-0000-000000000000",
+						"supermarkets"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Supermercados de Invalid Ciudad",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cities/00000000-0000-0000-0000-000000000000/supermarkets",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"00000000-0000-0000-0000-000000000000",
+								"supermarkets"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"El producto con este Id no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Supermercado de Ciudad",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"{{supermercadoId2}}\"\r\n    },\r\n    {\r\n        \"id\": \"{{supermercadoId3}}\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"{{ciudadId}}",
+						"supermarkets"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Categoria de Producto",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"{{categoria_id_2}}\"\r\n    },\r\n    {\r\n        \"id\": \"{{categoria_id_3}}\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"{{ciudadId}}",
+								"supermarkets"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"e7b1d8e7-4b8f-4c9f-ae6f-1b8e6d3c8e5b\",\r\n    \"nombre\": \"Aceite de Oliva Virgen Extra Oro del Mediterráneo\",\r\n    \"descripcion\": \"El Aceite de Oliva Virgen Extra Oro del Mediterráneo es un aceite de alta calidad, obtenido de las mejores aceitunas de la región mediterránea. Su sabor afrutado y su aroma fresco lo hacen perfecto para aderezar ensaladas, cocinar a la parrilla y añadir un toque especial a tus platos favoritos. Este aceite se extrae en frío para preservar todas sus propiedades nutritivas y su perfil de sabor único.\",\r\n    \"historia\": \"Desde su fundación en 2010, la empresa OlivaRica se ha dedicado a producir aceites de oliva premium con un enfoque en la sostenibilidad y la calidad. Oro del Mediterráneo fue creado para reflejar la riqueza de las tradiciones olivicultoras de la región y ha sido reconocido en diversas competiciones internacionales por su excelencia y sabor.\",\r\n    \"categoria\": [\r\n        {\r\n            \"nombre\": \"Aceites y Vinagres\"\r\n        },\r\n        {\r\n            \"nombre\": \"grasas\"\r\n        },\r\n        {\r\n            \"nombre\": \"natural\"\r\n        }\r\n    ]\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Invalid Supermercado de Ciudad",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"El supermercado con este id no fue encontrado\");",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"00000000-0000-0000-0000-000000000000\"\r\n    },\r\n    {\r\n        \"id\": \"00000000-0000-0000-0000-000000000000\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"{{ciudadId}}",
+						"supermarkets"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Invalid Categoria de Producto",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"00000000-0000-0000-0000-000000000000\"\r\n    },\r\n    {\r\n        \"id\": \"00000000-0000-0000-0000-000000000000\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"{{ciudadId}}",
+								"supermarkets"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"La categoria o las categorias con estos Ids no fueron encontrados\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Supermercado de Invalid Ciudad",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"La ciudad con este id no fue encontrada\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"{{categoria_id_2}}\"\r\n    },\r\n    {\r\n        \"id\": \"{{categoria_id_3}}\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/cities/00000000-0000-0000-0000-000000000000/supermarkets",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"00000000-0000-0000-0000-000000000000",
+						"supermarkets"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Supermercados de Invalid Ciudad",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"{{categoria_id_2}}\"\r\n    },\r\n    {\r\n        \"id\": \"{{categoria_id_3}}\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/cities/00000000-0000-0000-0000-000000000000/supermarkets",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"00000000-0000-0000-0000-000000000000",
+								"supermarkets"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"El producto con este Id no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Supermercado de Ciudad",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"   pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets/{{supermercadoId2}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"{{ciudadId}}",
+						"supermarkets",
+						"{{supermercadoId2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Supermercado de Ciudad",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets/{{supermercadoId2}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"{{ciudadId}}",
+								"supermarkets",
+								"{{supermercadoId2}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 204,\r\n    \"message\": \"El supermercado con este Id fue eliminado de la ciudd\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Supermercado de Invalid Ciudad",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"    var data = pm.response.json();",
+							"    pm.expect(data.message).to.eql(\"La ciudad con este id no fue encontrada\");",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/cities/00000000-0000-0000-0000-000000000000/supermarkets/{{supermercadoId}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"00000000-0000-0000-0000-000000000000",
+						"supermarkets",
+						"{{supermercadoId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Supermercado de Invalid Ciudad",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cities/00000000-0000-0000-0000-000000000000/supermarkets/{{supermercadoId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"00000000-0000-0000-0000-000000000000",
+								"supermarkets",
+								"{{supermercadoId}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"El producto con este Id no fue encontrada\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Invalid Supermercado de Ciudad",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"    var data = pm.response.json();",
+							"    pm.expect(data.message).to.eql(\"El supermercado con este id no fue encontrado\");",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"{{ciudadId}}",
+						"supermarkets",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Invalid Categoria de Producto",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"{{ciudadId}}",
+								"supermarkets",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"La categoria con este Id no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Supermercado non-associated de Ciudad",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {",
+							"    pm.response.to.have.status(412);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"    var data = pm.response.json();",
+							"    pm.expect(data.message).to.eql(\"La ciudad con este id no esta asociada a este Supermercado\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets/{{supermercadoId2}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"cities",
+						"{{ciudadId}}",
+						"supermarkets",
+						"{{supermercadoId2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Supermercado non-associated de Ciudad",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cities/{{ciudadId}}/supermarkets/{{supermercadoId2}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cities",
+								"{{ciudadId}}",
+								"supermarkets",
+								"{{supermercadoId2}}"
+							]
+						}
+					},
+					"code": 4012,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"La categoria con este Id no esta asociado a este producto\"\r\n}"
+				}
+			]
+		}
+	]
+}
